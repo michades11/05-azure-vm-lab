@@ -1,0 +1,39 @@
+============================================================
+AZURE VM LAB - RAW CONFIGURATION SCRATCHPAD
+============================================================
+
+LOCAL ENVIRONMENT DETAILS:
+- Local Public IP: 135.129.124.163
+
+VM ENDPOINTS:
+- WinAdminVM Public IP: 9.205.104.242
+- LinuxAdminVM Public IP: 9.205.105.17
+
+NETWORK SECURITY GROUP (NSG) RULES LOG:
+
+[Rule 1: Windows RDP]
+- Associated VM: WinAdminVM
+- Rule Name: Allow_RDP_From_MyIP
+- Source: IP Addresses
+- Source IP/CIDR: 135.129.124.163/32
+- Destination Port: 3389
+- Protocol: TCP
+- Action: Allow
+- Priority: 100
+
+[Rule 2: Linux SSH]
+- Associated VM: LinuxAdminVM
+- Rule Name: Allow_SSH_From_MyIP
+- Source: IP Addresses
+- Source IP/CIDR: 135.129.124.163/32
+- Destination Port: 22
+- Protocol: TCP
+- Action: Allow
+- Priority: 100
+
+============================================================
+NOTES / CREDENTIAL RECALL:
+- Windows Admin Username: cloudadmin
+- Linux Admin Username: azureuser
+- SSH Private Key File: LinuxAdminVM_key.pem
+============================================================
